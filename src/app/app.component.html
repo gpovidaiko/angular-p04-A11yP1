@@ -1,5 +1,19 @@
 <main>
 	<h1>Form</h1>
-	<app-yes-no-button-group label="Are you good enough in Angular?" [(value)]="answer"></app-yes-no-button-group>
-	<span>answer value: {{ answer }}</span>
+
+	<div>
+		<h2>Template Driven Example</h2>
+
+		<app-yes-no-button-group label="Are you good enough in Angular?" [(ngModel)]="answer"></app-yes-no-button-group>
+		<span>answer value: {{ answer }}</span>
+	</div>
+
+	<div>
+		<h2>Reactive Example</h2>
+
+		<form [formGroup]="form" (ngSubmit)="submit()">
+			<app-yes-no-button-group label="Are you good enough in Angular?" formControlName="answer"></app-yes-no-button-group>
+			<button type="submit">Submit</button>
+		</form>
+	</div>
 </main>
