@@ -1,5 +1,29 @@
-<div role="radiogroup" [attr.aria-labelledby]="id" class="button-group">
+<div appKeyboardManager role="radiogroup" [attr.aria-labelledby]="id" class="button-group">
 	<label [attr.id]="id" class="label">{{ label }}</label>
-	<button role="radio" class="button button-yes" [attr.aria-checked]="value === options.YES" [class.button-pressed]="value === options.YES" type="button" (click)="activate(options.YES)">Yes</button>
-	<button role="radio" class="button button-no" [attr.aria-checked]="value === options.NO" [class.button-pressed]="value === options.NO" type="button" (click)="activate(options.NO)">No</button>
+	<button
+		appKeyboardManagedItem
+		(keyboardFocus)="activate(options.YES)"
+		role="radio"
+		class="button button-yes"
+		[attr.tabindex]="value === options.YES || !value ? 0 : -1"
+		[attr.aria-checked]="value === options.YES"
+		[class.button-pressed]="value === options.YES"
+		type="button"
+		(click)="activate(options.YES)"
+	>
+		Yes
+	</button>
+	<button
+		appKeyboardManagedItem
+		(keyboardFocus)="activate(options.NO)"
+		role="radio"
+		class="button button-no"
+		[attr.tabindex]="value === options.NO ? 0 : -1"
+		[attr.aria-checked]="value === options.NO"
+		[class.button-pressed]="value === options.NO"
+		type="button"
+		(click)="activate(options.NO)"
+	>
+		No
+	</button>
 </div>
