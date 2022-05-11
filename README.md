@@ -25,6 +25,11 @@ Implementação regras de navegação no componente de estudo via teclado, confo
 Visto regras de funcionamento do atributo _'tabindex'_ e sua relação com a navegação através da tecla tab. Em relação ao funcionamento do componente de estudo, o _'tabindex'_ foi configurado para permitir somente navegar para a opção selecionada e ignorar a opção não selecionada. Também foi necessário configurar a navegação para uma opção padrão, caso nenhuma estiver selecionada.
 Para configurar a navegação através das teclas de seta, foram criados um conjunto de diretivas. Uma para representar o _'container'_ que contém uma lista de componentes representados pela segunda diretiva, de marcação, e tratará qual o próximo elemento a ser focado conforme a tecla pressionada. A diretiva de marcação, por sua vez, informa se o elemento a ela relacionado é o atual elemento ativo e também emite um evento para anunciar quando o elemento relacionado a ela recebe o foco.
 
+## 05. Revisando o nosso componente
+
+Visto as regras para a navegação através de componentes desabilitados, que devem ser ignorados. Implementação de alternar entre habilitado e desabilitado, tanto para campos em formulários reativos (_Reactive_), quanto para formulários guiados por modelo (_Template Driven_).
+Ao final foi demostrado a importância de se trabalhar com os componentes nativos do _HTML_, já que os comportamentos de acessibilidade para estes componentes já são devidamente tratados, evitando a necessidade de ter que implementar manualmente alguns comportamentos como de navegação por teclado e a definição de _roles_.
+
 ## §
 
 - _Web Content Accessibility Guidelines (WCAG): 'https://www.w3.org/WAI/standards-guidelines/wcag'_

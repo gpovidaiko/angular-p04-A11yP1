@@ -1,22 +1,21 @@
 import { Component, EventEmitter, forwardRef, Input, OnInit, Output } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { ButtonGroupOptions } from '../../enums/ButtonGroupOptions';
-
-import { UniqueIdService } from './../../services/unique-id/unique-id.service';
+import { UniqueIdService } from '../../services/unique-id/unique-id.service';
 
 @Component({
-	selector: 'app-yes-no-button-group',
-	templateUrl: './yes-no-button-group.component.html',
-	styleUrls: ['./yes-no-button-group.component.scss'],
+	selector: 'app-yes-no-native-radio-group',
+	templateUrl: './yes-no-native-radio-group.component.html',
+	styleUrls: ['./yes-no-native-radio-group.component.scss'],
 	providers: [
 		{
 			provide: NG_VALUE_ACCESSOR,
 			multi: true,
-			useExisting: forwardRef(() => YesNoButtonGroupComponent)
+			useExisting: forwardRef(() => YesNoNativeRadioGroupComponent)
 		}
 	]
 })
-export class YesNoButtonGroupComponent implements OnInit, ControlValueAccessor {
+export class YesNoNativeRadioGroupComponent implements OnInit, ControlValueAccessor {
 
 	@Input() public value: string = null;
 	@Input() public label: string = '';
@@ -59,3 +58,5 @@ export class YesNoButtonGroupComponent implements OnInit, ControlValueAccessor {
 	}
 
 }
+
+
